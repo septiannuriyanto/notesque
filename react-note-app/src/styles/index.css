@@ -1,0 +1,26 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&family=Quicksand:wght@300;400;500&display=swap');
+
+  
+:root {
+  font-family: "Poppins", 'sans-serif', "Inter";
+  line-height: 1.5;
+  font-weight: 100;
+
+  color-scheme: light;
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: var(--backgroundcolor);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+  --backgroundcolor : #eeeeee;
+  --containercolor : #ffffff;
+  --color1 : #b29cdb;
+  --color2 : #aec9af;
+  --color3 : #ffcc80;
+}

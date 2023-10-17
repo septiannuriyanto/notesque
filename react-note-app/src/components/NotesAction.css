@@ -1,0 +1,46 @@
+.notes-item_action{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    border: none;
+   
+}
+
+.notes-item_archive-btn{
+    background-color:   rgb(157, 193, 141);
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.notes-item_archive-btn:hover{
+    background-color: rgb(93, 190, 48);
+    transition: 300ms all ease;
+}
+
+.notes-item_archive-btn:active{
+    background-color: rgb(207, 241, 192);
+}
+
+.notes-item_delete-btn{
+    background-color: white;
+    color: rgba(255, 121, 121, 0.672);
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.notes-item_delete-btn:hover{
+    color: red;
+    transition: 300ms all ease;
+}
+
+.notes-item_delete-btn:active{
+    color: white;
+    background-color: red;
+    transition: 300ms all ease;
+}

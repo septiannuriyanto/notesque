@@ -1,0 +1,15 @@
+
+.notes-archive{
+    display: block;
+    flex-direction: column;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.notes-archive_items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+}
+

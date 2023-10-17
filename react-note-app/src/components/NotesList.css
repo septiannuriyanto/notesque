@@ -1,0 +1,14 @@
+.notes-list{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.notes-list_items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+}

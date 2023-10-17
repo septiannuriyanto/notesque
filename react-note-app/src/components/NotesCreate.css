@@ -1,0 +1,80 @@
+.note-create{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.note-create_title{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    width: 50%;
+    padding: 10px;
+    align-items: start;
+    justify-content :space-between
+}
+
+.note-create_title b{
+   padding-left: 30px;
+   font-size: small;
+   color: rgb(144, 143, 143);
+}
+
+
+.note-create input{
+    width: 70%;
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 8px;
+}
+
+.note-create textarea{
+    width: 50%;
+    border: none;
+    resize: none;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.note-create button{
+    width: 100px;
+    background-color:   rgb(157, 193, 141);
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.note-create button:hover{
+    background-color: rgb(93, 190, 48);
+    transition: 300ms all ease;
+
+}
+
+.note-create button:active{
+    background-color: rgb(207, 241, 192);
+}
+
+@media screen and (max-width:600px) {
+    .note-create textarea{
+        width: 85%;
+    }
+
+    .note-create_title{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .note-create input{
+        width: 85%;
+    }
+    .note-create b{
+        padding-left: 3px;
+        margin: 10px;
+    }
+}
