@@ -12,7 +12,7 @@ function Header({onSearch}){
                 <h1>Notesque App</h1>
             </div>
             <form className='search-bar' onChange={(e)=>onSearch(e.target.value)}>
-                <input type='text' placeholder='Keyword'></input>
+                <input type='text' placeholder='Type to search.....'></input>
             </form>
         </nav>   
         );

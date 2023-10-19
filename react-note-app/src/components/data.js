@@ -3,22 +3,34 @@ const getNotes = () =>{
         {
             id : 1,
             title : "Note Pertama",
-            date : "20 Oktober 2023",
-            content : "Coba note pertama dulu ga seeehhh....."
-        }
-    ]
-}
-
-const getArchives = () =>{
-    return[
+            createdAt : "20 Oktober 2023",
+            archived : true,
+            body : "Ini Note Pertama"
+        },
         {
-            id : 1,
-            title : "Arsip Pertama",
-            date : "20 Oktober 2023",
-            content : "Coba arsip pertama dulu ga seeehhh....."
-        }
+            id : 2,
+            title : "Note Kedua",
+            createdAt : "19 Oktober 2023",
+            archived : false,
+            body : "Ini Note Kedua"
+        },
+        {
+            id : 3,
+            title : "Note Ketiga",
+            createdAt : "18 Oktober 2023",
+            archived : false,
+            body : "Ini Note Ketiga"
+        },
+        {
+            id : 4,
+            title : "Note Keempat",
+            createdAt : "17 Oktober 2023",
+            archived : false,
+            body : "Ini Note Keempat"
+        },
     ]
 }
 
 
-export {getNotes, getArchives}
+
+export {getNotes}

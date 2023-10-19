@@ -5,19 +5,15 @@ import NoteList from './components/NotesList'
 import NotesArchive from './components/NotesArchive'
 import Header from './components/Header'
 import NotesCreate from './components/NotesCreate'
-import {getArchives, getNotes} from './components/data.js'
+import { getNotes} from './components/data.js'
 import { getDate } from './components/datehandler'
 
 class NotesApp extends React.Component {
 
-  
-
   constructor(props){
-    
     super(props);
     this.state={
         notes : getNotes(),
-        archives : getArchives(),
         keyword : ''
     }
 
@@ -45,9 +41,6 @@ onKeywordSearch(search){
 
 }
 
-
-
-
 onDeleteArchiveHandler(id){
   const archives = this.state.archives.filter(archives => archives.id !==id);
   this.setState({archives});
@@ -73,44 +66,18 @@ onAddNotesHandler({title, content}){
 }
 
 
-onArchiveNotesHandler(id, title, date, content){
-  this.onDeleteNotesHandler(id);
-  this.setState((prevState)=>{
-    return{
-      archives: [
-          ...prevState.archives,
-          {
-              id : +new Date() + id,
-              title : title,
-              date : date,
-              content : content,
-          }
-      ],
-    }
-  });
-
-  
-  // alert('Archived')
+onArchiveNotesHandler(id){
+  const changedNotes = [...this.state.notes];
+  const singleNote = changedNotes.find(item => item.id === id);
+  singleNote.archived = true;
+  this.setState({changedNotes});
 }
 
-onRestoreArchiveHandler(id, title, date, content){
-  this.onDeleteArchiveHandler(id)
-  this.setState((prevState)=>{
-    return{
-      notes: [
-        ...prevState.notes,
-        {
-            id : +new Date() + id,
-            title : title,
-            date : date,
-            content : content,
-        }
-    ],
-    }
-  });
-
-  
-  // alert('Restored')
+onRestoreArchiveHandler(id){
+  const changedNotes = [...this.state.notes];
+  const singleNote = changedNotes.find(item => item.id === id);
+  singleNote.archived = false;
+  this.setState({changedNotes});
 }
 
 render(){
@@ -119,7 +86,7 @@ render(){
     <Header onSearch={this.onKeywordSearch}/>
     <NotesCreate addNotes={this.onAddNotesHandler}/>
     <NoteList keyword={this.state.keyword} notes = {this.state.notes} onDeleteNotes={this.onDeleteNotesHandler} onArchiveNotes={this.onArchiveNotesHandler}/>
-    <NotesArchive keyword={this.state.keyword} archives = {this.state.archives} onDeleteArchive={this.onDeleteArchiveHandler} onRestoreArchive={this.onRestoreArchiveHandler} />
+    <NotesArchive keyword={this.state.keyword} archives = {this.state.notes} onDeleteArchive={this.onDeleteArchiveHandler} onRestoreArchive={this.onRestoreArchiveHandler} />
     </div>
   );
 }
