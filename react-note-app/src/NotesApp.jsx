@@ -56,8 +56,9 @@ onAddNotesHandler({title, content}){
               {
                   id : +newId,
                   title,
-                  date : getDate(newId),
-                  content,
+                  createdAt : getDate(newId),
+                  archived:false,
+                  body: content,
               }
           ],
 
