@@ -2,18 +2,17 @@ import React from 'react'
 import './NotesItem.css'
 import NotesAction from './NotesAction';
 
-class NotesItem extends React.Component{
-    render(){
+function NotesItem({id, title, date, content, onDelete, onArchive}){
         return(
             <div className="notes-item">
-                <h3>Title</h3>
-                <h4>Kamis, 5 November 2023</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati facere earum esse nostrum expedita molestias, ipsa enim neque? Tempora commodi eum quas deleniti similique ratione quo id quam doloribus qui!</p>
-                <NotesAction/>
+                <h3>{title}</h3>
+                <h4>{date}</h4>
+                <p>{content}</p>
+                <NotesAction id={id} title={title} date={date} content={content} onDelete={onDelete} onArchive={onArchive}/>
                 
             </div>
         );
-    }
+  
 }
 
 export default NotesItem;

@@ -12,3 +12,15 @@
     flex-direction: row;
     gap: 30px;
 }
+
+.notes-list_items:has(h2){
+    justify-content: center;
+}
+
+.notes-list_items h2{
+    display: flex;
+    flex-direction: row;
+    
+    justify-self: center;
+    color: rgb(184, 184, 184);
+}

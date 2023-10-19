@@ -1,0 +1,41 @@
+.root{
+    --color-light: rgba(132,139,200,0.18);
+    --box-shadow : 0 2rem 3rem var(var(--color-light));
+}
+
+
+.archive-item{
+    
+    display: flex;
+    flex-direction: column;
+    width: 25%; 
+    /* border: 1px solid black; */
+    padding: 20px;
+    border-radius: 24px;
+    background-color: gray;
+    box-shadow: var(--box-shadow);
+}
+
+.archive-item h3{
+    color: rgb(240, 112, 0);
+    margin:0px;
+}
+
+.archive-item h4{
+   color: rgb(157, 193, 141);
+   margin:0px;
+}
+
+.archive-item p{
+    font-weight: bold;
+    color: grey;
+}
+
+
+@media screen and (max-width:600px) {
+    .archive-item{
+        width: 100%;
+    }
+
+
+}
