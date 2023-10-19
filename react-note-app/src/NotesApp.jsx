@@ -21,7 +21,6 @@ class NotesApp extends React.Component {
     this.onDeleteNotesHandler = this.onDeleteNotesHandler.bind(this);
 
     this.onRestoreArchiveHandler = this.onRestoreArchiveHandler.bind(this);
-    this.onDeleteArchiveHandler = this.onDeleteArchiveHandler.bind(this);
 
     this.onAddNotesHandler = this.onAddNotesHandler.bind(this);
     this.onKeywordSearch = this.onKeywordSearch.bind(this);
@@ -41,10 +40,6 @@ onKeywordSearch(search){
 
 }
 
-onDeleteArchiveHandler(id){
-  const archives = this.state.archives.filter(archives => archives.id !==id);
-  this.setState({archives});
-}
 
 onAddNotesHandler({title, content}){
   const newId = new Date();
@@ -87,7 +82,7 @@ render(){
     <Header onSearch={this.onKeywordSearch}/>
     <NotesCreate addNotes={this.onAddNotesHandler}/>
     <NoteList keyword={this.state.keyword} notes = {this.state.notes} onDeleteNotes={this.onDeleteNotesHandler} onArchiveNotes={this.onArchiveNotesHandler}/>
-    <NotesArchive keyword={this.state.keyword} archives = {this.state.notes} onDeleteArchive={this.onDeleteArchiveHandler} onRestoreArchive={this.onRestoreArchiveHandler} />
+    <NotesArchive keyword={this.state.keyword} archives = {this.state.notes} onDeleteArchive={this.onDeleteNotesHandler} onRestoreArchive={this.onRestoreArchiveHandler} />
     </div>
   );
 }
